@@ -9,9 +9,9 @@ private:
     std::string type;
 
 public:
-    Zombie(void);
+    Zombie(std::string name, std::string type);
     ~Zombie(void);
-    
+
     std::string getName(void) const;
     std::string  getType(void) const;
     void setName(std::string name);
