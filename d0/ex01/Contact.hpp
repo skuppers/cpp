@@ -2,6 +2,9 @@
 # define CONTACT_H
 #include <string>
 
+const int MAX_CONTACTS = 8;
+const int WIDTH = 10;
+
 class Contact {
     
 private:
@@ -17,10 +20,7 @@ private:
     std::string underwear_color;
     std::string darkest_secret;
 public:
-    Contact(std::string a1, std::string a2, std::string a3,
-            std::string a4, std::string a5, std::string a6,
-            std::string a7, std::string a8, std::string a9,
-            std::string a10, std::string a11);
+    Contact();
     ~Contact();
 
     std::string getFirstname(void) const;
@@ -34,7 +34,18 @@ public:
     std::string getFavmeal(void) const;
     std::string getUnderwear(void) const;
     std::string getSecret(void) const;
-};
 
+    void setFirstname(std::string str);
+    void setLastname(std::string str);
+    void setNickname(std::string str);
+    void setLogin(std::string str);
+    void setPostal(std::string str);
+    void setEmail(std::string str);
+    void setPhone(std::string str);
+    void setBirthday(std::string str);
+    void setFavmeal(std::string str);
+    void setUnderwear(std::string str);
+    void setSecret(std::string str);
+};
 
 #endif
