@@ -16,7 +16,7 @@ Contact newContact(void)
     std::cout << "Nickname: ";
     std::cin >> buffer;
     newcnt.setNickname(buffer);
-  /*  std::cout << "Login: ";
+    std::cout << "Login: ";
     std::cin >> buffer;
     newcnt.setLogin(buffer);
     std::cout << "Postal address: ";
@@ -39,7 +39,7 @@ Contact newContact(void)
     newcnt.setUnderwear(buffer);
     std::cout << "Darkest secret: ";
     std::cin >> buffer;
-    newcnt.setSecret(buffer);*/
+    newcnt.setSecret(buffer);
     return (newcnt);
 }
 
