@@ -1,10 +1,19 @@
 #include "Zombie.hpp"
 #include <iostream>
 
-Zombie::Zombie(std::string na, std::string ty) : name(na), type(ty)  {
+Zombie::Zombie(void)
+{
+    int     index;
+    int     names_nbr;
+    Zombie  *zombie;
+    std::string names[] = {"Brulux", "Catfish", "Jean-titouan", "MarseilleBB", "WshAlorsMaRace"};
+
     if (this->type == "")
         this->type = "ded";
- }
+    names_nbr = 5;
+    index = rand() % names_nbr;
+    this->name = names[index];
+}
 
 Zombie::~Zombie() { }
 
