@@ -16,7 +16,9 @@ int main(int argc, char const *argv[])
         s2 = argv[3];
         filename = argv[1];
         output = filename + ".replace";
+        
         std::ifstream   readFile(filename);
+
         if (readFile.fail())
         {
             std::cout << "Error opening file! :(" << std::endl;
