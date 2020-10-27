@@ -20,7 +20,12 @@ public:
     void recoverAP(void);
     void equip(AWeapon*);
     void attack(AEnemy*);
+
     std::string getName(void) const;
+    int         getAP(void) const;
+    std::string getWeaponName(void) const;
 };
+
+std::ostream &operator<<(std::ostream &out, Character const &character);
 
 #endif  //!__CHARACTER__H__
