@@ -15,7 +15,7 @@ public:
     Sorcerer(const Sorcerer&);
     Sorcerer(std::string name, std::string title);
     ~Sorcerer(void);
-    Sorcerer &operator=(const Sorcerer&);
+    //Sorcerer &operator=(const Sorcerer&);
 
     void polymorph(Victim const &) const;
 

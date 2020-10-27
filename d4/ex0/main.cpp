@@ -4,6 +4,15 @@
 
 int main(void)
 {
+    Sorcerer robert("Robert", "Destructor of worlds");
+
+    Victim jim("Jimmy");
+    Peon joe("Joe");
+
+    std::cout << robert << jim << joe;
+
+    robert.polymorph(jim);
+    robert.polymorph(joe);
 
     return 0;
 }

@@ -1,13 +1,16 @@
 #ifndef __PEON__H__
 #define __PEON__H__
 
-class Peon
+#include "Victim.hpp"
+
+class Peon : public Victim
 {
-private:
-    /* data */
 public:
-    Peon(/* args */);
-    ~Peon();
+    Peon(void);
+    Peon(std::string name);
+    ~Peon(void);
+
+    void getPolymorphed(void) const;
 };
 
 #endif  //!__PEON__H__
