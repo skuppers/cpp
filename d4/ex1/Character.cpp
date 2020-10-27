@@ -61,9 +61,9 @@ std::string Character::getWeaponName(void) const {
 }
 
 std::ostream &operator<<(std::ostream &out, Character const &ch) {
-    if (ch.getWeaponName().compare("nullptr"))
-        out << ch.getName() << " has " << ch.getAP() << " AP but is unarmed!";
+    if (ch.getWeaponName().compare("nullptr") == 0)
+        out << ch.getName() << " has " << ch.getAP() << " AP but is unarmed!" << std::endl;
     else
-        out << ch.getName() << " has " << ch.getAP() << " AP and carries a " << ch.getWeaponName();
+        out << ch.getName() << " has " << ch.getAP() << " AP and carries a " << ch.getWeaponName() << std::endl;
     return out;
 }
