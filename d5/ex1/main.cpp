@@ -1,20 +1,17 @@
 #include <iostream>
 #include <stdexcept>
 
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-void checkBureaucrat(Bureaucrat test, int min, int max)
+static void
+checkForm(Bureaucrat bureaucrat, Form form)
 {
     try
     {
-        for(int i = min; i <= max; i++)
-        {
-            //test.setGrade(i);
-            test.incrementGrade();
-            //test.incrementGrade();
-            //test.decrementGrade();
-            std::cout << test << std::endl;
-        }
+        bureaucrat.signForm(form);
+        std::cout << bureaucrat << std::endl;
+        std::cout << form << std::endl;
     }
     catch (std::exception &e)
     {
@@ -26,8 +23,21 @@ void checkBureaucrat(Bureaucrat test, int min, int max)
 int
 main(void)
 {
-    Bureaucrat    test("skuppers", 42);
+    Form        f1 = Form("28-B", 42, 42);
+    Form        f2 = Form("69-C", 30, 50);
+    Bureaucrat  b1 = Bureaucrat("Marvin", 42);
+    Bureaucrat  b2 = Bureaucrat("Mr. Abraham", 1);
 
-    checkBureaucrat(test, test.getGrade(), 150);
+    checkForm(b1, f1);
+    std::cout << std::endl;
+
+    checkForm(b1, f2);
+    std::cout << std::endl;
+
+    checkForm(b2, f1);
+    std::cout << std::endl;
+
+    checkForm(b2, f2);
+    std::cout << std::endl;
     return (0);
 }

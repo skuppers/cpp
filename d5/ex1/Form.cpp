@@ -1,4 +1,5 @@
 #include "Form.hpp"
+//#include "Bureaucrat.hpp"
 
 Form::Form(void)
 {
@@ -100,41 +101,44 @@ const char *Form::GradeTooHighException::what() const throw()
     return ("Form: Grade is too high...");
 }
 
-std::string getName(void) const {
+std::string Form::getName(void) const {
     return this->_name;
 }
 
-bool        isSigned(void) const {
+bool        Form::isSigned(void) const {
     return this->_signed;
 }
 
-int         getRequiredSign(void) const {
+int         Form::getRequiredSign(void) const {
     return this->_requiredGradeSign;
 }
 
-int         getRequiredExec(void) const {
+int         Form::getRequiredExec(void) const {
     return this->_requiredGradeExec;
 }
 
-void        setName(std::string name) {
+void        Form::setName(std::string name) {
     this->_name = name;
 }
 
-void        setSigned(bool sign) {
+void        Form::setSigned(bool sign) {
     this->_signed = sign;
 }
 
-void        setRequiredSign(int grade) {
+void        Form::setRequiredSign(int grade) {
     this->_requiredGradeSign = grade;
 }
 
-void        setRequiredExec(int grade) {
+void        Form::setRequiredExec(int grade) {
     this->_requiredGradeExec = grade;
 }
 
-void        beSigned(Bureaucrat b) {
+void        Form::beSigned(Bureaucrat &b) {
     if (b.getGrade() <= this->getRequiredSign())
         this->setSigned(true);
+    else
+        throw Form::GradeTooLowException();
+    
 }
 
 std::ostream &operator<<(std::ostream &out, Form const &form) {

@@ -34,8 +34,8 @@ class Form
         };
 
         Form(void);
-        Form(std::string name, int reqSign, int reqExec);
         Form(const Form &src);
+        Form(std::string name, int reqSign, int reqExec);
         Form &operator=(const Form &rhs);
         ~Form(void);
 
@@ -49,8 +49,7 @@ class Form
         void        setRequiredSign(int grade);
         void        setRequiredExec(int grade);
 
-        void        beSigned(Bureaucrat b);
-
+        void        beSigned(Bureaucrat &b);
 };
 
 std::ostream &operator<<(std::ostream &out, Form const &brct);
